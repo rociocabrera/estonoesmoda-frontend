@@ -3,12 +3,20 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./NavBar.css";
+import CartWidget from "./CartWidget";
 
 function BasicExample() {
   return (
     <Navbar fixed="top" expand="lg" className={["bg-body-tertiary, navbar"]}>
       <Container>
         {/* logo */}
+        <Navbar className="bg-body-tertiary">
+          <Container>
+            <Navbar.Brand href="#home">
+              <img src="/images/logo.png" width="30" height="30" className="d-inline-block align-top" alt="React Bootstrap logo" />
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
         <Navbar.Brand href="#home">Esto no es Moda</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -25,6 +33,7 @@ function BasicExample() {
           </Nav>
         </Navbar.Collapse>
         {/* cartwidget */}
+        <CartWidget />
       </Container>
     </Navbar>
   );
