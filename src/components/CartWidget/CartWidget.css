@@ -1,0 +1,26 @@
+.bagcart {
+  color: #fff;
+  font-size: 30px;
+  margin-right: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.counter {
+  bottom: 10px;
+  right: 2px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 0 8px;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+}
