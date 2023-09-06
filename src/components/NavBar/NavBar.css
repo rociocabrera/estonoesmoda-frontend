@@ -1,4 +1,17 @@
 .navbar {
   background-color: rgb(33, 102, 75);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.navbar-cointainer {
+  padding: 0 !important;
+}
+.navbar-brand {
+  margin: 0;
+  padding: 0;
+  color: #fff !important;
+}
+.color-white {
+  color: #fff !important;
 }

@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer greeting="Hola Mundo" />
+      <ItemListContainer greeting="Bienvenidx a Esto no es Moda👠" />
     </>
   );
 }
