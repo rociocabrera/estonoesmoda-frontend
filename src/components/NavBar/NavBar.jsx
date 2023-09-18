@@ -6,15 +6,18 @@ import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
-function OwnNavBar() {
+function OwnNavBar(props) {
+  console.log(props);
   return (
     <Navbar fixed="top" expand="lg" className={["bg-body-tertiary, navbar"]}>
       <Container>
         <Navbar className="bg-body-tertiary navbar">
           <Container className="navbar-cointainer">
-            <Navbar.Brand className="navbar-brand">
-              <img src="/images/logo.png" className="logo" alt="React Bootstrap logo" />
-            </Navbar.Brand>
+            <Link to="/">
+              <Navbar.Brand className="navbar-brand">
+                <img src="/images/logo.png" className="logo" alt="React Bootstrap logo" />
+              </Navbar.Brand>
+            </Link>
           </Container>
         </Navbar>
         <Link to="/">
@@ -24,15 +27,11 @@ function OwnNavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Products" id="basic-nav-dropdown">
-              <NavDropdown.Item onClick={onItemClicked} href="#action/3.1">
-                Dress
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={onItemClicked} href="#action/3.2">
-                Pants
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={onItemClicked} href="#action/3.3">
-                Shirts
-              </NavDropdown.Item>
+              {props.categories.map((category) => (
+                <NavDropdown.Item as={Link} to={`/category/${category.id}`} key={category.id}>
+                {category.name}
+                </NavDropdown.Item>
+              ))}
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -41,9 +40,5 @@ function OwnNavBar() {
     </Navbar>
   );
 }
-
-const onItemClicked = () => {
-  alert("Item clicked");
-};
 
 export default OwnNavBar;
