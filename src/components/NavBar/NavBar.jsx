@@ -7,7 +7,6 @@ import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
 function OwnNavBar(props) {
-  console.log(props);
   return (
     <Navbar fixed="top" expand="lg" className={["bg-body-tertiary, navbar"]}>
       <Container>
@@ -29,7 +28,7 @@ function OwnNavBar(props) {
             <NavDropdown title="Products" id="basic-nav-dropdown">
               {props.categories.map((category) => (
                 <NavDropdown.Item as={Link} to={`/category/${category.id}`} key={category.id}>
-                {category.name}
+                  {category.name}
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
