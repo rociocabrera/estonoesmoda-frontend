@@ -3,29 +3,19 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <ItemListContainer greeting="Bienvenidx a Esto no es Moda👠" />,
-  },
-  {
-    path: "/category/:id",
-    element: <ItemListContainer />,
-  },
-  {
-    path: "/item/:id",
-    element: <ItemDetailContainer />,
-  },
-]);
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <Router>
       <NavBar />
-      <RouterProvider router={router} />
-    </>
+
+      <Routes>
+        <Route index element={<ItemListContainer greeting="Bienvenidx a Esto no es Moda👠" />} />
+        <Route path="/category/:id" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+      </Routes>
+    </Router>
   );
 }
 

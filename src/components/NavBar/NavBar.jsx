@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 function OwnNavBar() {
   return (
@@ -16,7 +17,9 @@ function OwnNavBar() {
             </Navbar.Brand>
           </Container>
         </Navbar>
-        <Navbar.Brand href="#home">ENM Clothing Store✨</Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand> ENM Clothing Store✨</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
