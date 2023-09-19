@@ -21,7 +21,7 @@ function App() {
       <NavBar categories={categories} />
       <Routes>
         <Route index element={<ItemListContainer greeting="Bienvenidx a Esto no es Moda👠" />} />
-        <Route path="/category/:id" element={<ItemListContainer greeting="Estas son las categorías" />} />
+        <Route path="/category/:id" element={<ItemListContainer greeting="Esta es la categoría shoes" />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
       </Routes>
     </Router>

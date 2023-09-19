@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
-import getProducts from "../../api/products";
+import { getProducts } from "../../api/products";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
