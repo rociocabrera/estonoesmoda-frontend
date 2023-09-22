@@ -15,3 +15,9 @@
 .color-white {
   color: #fff !important;
 }
+#basic-nav-dropdown {
+  color: #fff !important;
+  font-weight: 400 !important;
+}
+
+/* text-transform: capitalize !important;*/
