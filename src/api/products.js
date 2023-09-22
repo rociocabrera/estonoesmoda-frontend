@@ -1,4 +1,4 @@
-export const getProducts = async (categoryId) => {
+export const getProductsByCategory = async (categoryId) => {
   try {
     const response = await fetch("https://rociocabrera.github.io/api_estonoesmoda/products.json");
     const products = await response.json();
@@ -18,4 +18,14 @@ export const getProductById = async (id) => {
   }
 };
 
-export default getProducts;
+export const getAllProducts = async () => {
+  try {
+    const response = await fetch("https://rociocabrera.github.io/api_estonoesmoda/products.json");
+    const products = await response.json();
+    return products;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export default { getProductsByCategory, getProductById, getAllProducts };

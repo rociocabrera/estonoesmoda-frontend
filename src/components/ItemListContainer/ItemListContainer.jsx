@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../../api/products";
+import { getAllProducts, getProductsByCategory } from "../../api/products";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
@@ -15,11 +15,16 @@ function ItemListContainer(props) {
 
   useEffect(() => {
     if (categoryId) {
-      getProducts(categoryId).then((productsResult) => {
+      getProductsByCategory(categoryId).then((productsResult) => {
+        setProducts(productsResult);
+      });
+    } else {
+      getAllProducts().then((productsResult) => {
         setProducts(productsResult);
       });
     }
   }, [categoryId]);
+
 
   return (
     <Layout>
