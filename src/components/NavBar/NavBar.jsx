@@ -3,10 +3,20 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./NavBar.css";
-import CartWidget from "../CartWidget/CartWidget";
+import { CartWidget } from "../CartWidget";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getCategories } from "../../api/categories";
 
-function OwnNavBar(props) {
+function OwnNavBar() {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories().then((categoriesResult) => {
+      setCategories(categoriesResult);
+    });
+  }, []);
+
   return (
     <Navbar fixed="top" expand="lg" className={["bg-body-tertiary, navbar"]}>
       <Container>
@@ -26,7 +36,7 @@ function OwnNavBar(props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Products" id="basic-nav-dropdown">
-              {props.categories.map((category) => (
+              {categories.map((category) => (
                 <NavDropdown.Item as={Link} to={`/category/${category.id}`} key={category.id}>
                   {category.name}
                 </NavDropdown.Item>

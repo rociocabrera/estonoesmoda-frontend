@@ -6,6 +6,7 @@ import { getProducts } from "../../api/products";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { Layout } from "../Layout";
 
 function ItemListContainer(props) {
   const { id: categoryId } = useParams();
@@ -21,7 +22,7 @@ function ItemListContainer(props) {
   }, [categoryId]);
 
   return (
-    <div>
+    <Layout>
       <h1 className="greeting">{props.greeting}</h1>
       {products.map((product) => (
         <Card style={{ width: "18rem" }} key={product.id}>
@@ -35,7 +36,7 @@ function ItemListContainer(props) {
           </Card.Body>
         </Card>
       ))}
-    </div>
+    </Layout>
   );
 }
 

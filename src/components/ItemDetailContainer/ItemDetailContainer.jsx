@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { getProductById } from "../../api/products";
 import Card from "react-bootstrap/Card";
+import { Layout } from "../Layout";
 
 function ItemDetailContainer() {
   const { id: productId } = useParams();
@@ -19,7 +20,7 @@ function ItemDetailContainer() {
   }, [productId]);
 
   return (
-    <div>
+    <Layout>
       <h1 style={{ fontWeight: "lighter" }}>Product Details</h1>
       {product ? (
         <div>
@@ -34,7 +35,7 @@ function ItemDetailContainer() {
       ) : (
         <p>Product not found</p>
       )}
-    </div>
+    </Layout>
   );
 }
 
