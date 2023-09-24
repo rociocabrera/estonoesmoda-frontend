@@ -1,6 +1,8 @@
+const url = "https://rociocabrera.github.io/api_estonoesmoda/categories.json";
+
 export const getCategories = async () => {
   try {
-    const response = await fetch("https://rociocabrera.github.io/api_estonoesmoda/categories.json");
+    const response = await fetch(url);
     const categories = await response.json();
     return categories;
   } catch (error) {
@@ -8,4 +10,14 @@ export const getCategories = async () => {
   }
 };
 
-export default getCategories;
+export const getCategoryBySlug = async (slug) => {
+  try {
+    const response = await fetch(url);
+    const categories = await response.json();
+    return categories.find((category) => category.slug === slug);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export default { getCategories, getCategoryBySlug };

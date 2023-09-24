@@ -2,26 +2,29 @@
 import { useEffect, useState } from "react";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
-import { getAllProducts, getProductsByCategory } from "../../api/products";
+import { getAllProducts, getProductsByCategoryId } from "../../api/products";
+import { getCategoryBySlug } from "../../api/categories";
 import { Layout } from "../Layout";
 import { ItemList } from "../ItemList";
 
 function ItemListContainer(props) {
-  const { id: categoryId } = useParams();
+  const { id: categorySlug } = useParams();
 
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    if (categoryId) {
-      getProductsByCategory(categoryId).then((productsResult) => {
-        setProducts(productsResult);
+    if (categorySlug) {
+      getCategoryBySlug(categorySlug).then((categoryResult) => {
+        getProductsByCategoryId(categoryResult.id).then((productsResult) => {
+          setProducts(productsResult);
+        });
       });
     } else {
       getAllProducts().then((productsResult) => {
         setProducts(productsResult);
       });
     }
-  }, [categoryId]);
+  }, [categorySlug]);
 
   return (
     <Layout>

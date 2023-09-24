@@ -37,7 +37,7 @@ function OwnNavBar() {
           <Nav className="me-auto">
             <NavDropdown title="Products" id="basic-nav-dropdown">
               {categories.map((category) => (
-                <NavDropdown.Item as={Link} to={`/category/${category.id}`} key={category.id}>
+                <NavDropdown.Item as={Link} to={`/category/${category.slug}`} key={category.id}>
                   {category.name}
                 </NavDropdown.Item>
               ))}
