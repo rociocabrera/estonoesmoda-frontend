@@ -10,11 +10,11 @@ export const getProductsByCategoryId = async (categoryId) => {
   }
 };
 
-export const getProductById = async (id) => {
+export const getProductBySlug = async (slug) => {
   try {
     const response = await fetch(url);
     const product = await response.json();
-    return product.find((product) => product.id.toString() === id);
+    return product.find((product) => product.slug.toString() === slug);
   } catch (error) {
     console.log(error);
   }
@@ -30,4 +30,4 @@ export const getAllProducts = async () => {
   }
 };
 
-export default { getProductsByCategoryId, getProductById, getAllProducts };
+export default { getProductsByCategoryId, getProductBySlug, getAllProducts };

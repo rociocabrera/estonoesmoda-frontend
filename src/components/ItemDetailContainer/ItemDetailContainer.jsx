@@ -2,23 +2,23 @@ import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
-import { getProductById } from "../../api/products";
+import { getProductBySlug } from "../../api/products";
 import Card from "react-bootstrap/Card";
 import { Layout } from "../Layout";
 import { Counter } from "../Counter";
 
 function ItemDetailContainer() {
-  const { id: productId } = useParams();
+  const { id: productSlug } = useParams();
 
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    if (productId) {
-      getProductById(productId).then((productResult) => {
+    if (productSlug) {
+      getProductBySlug(productSlug).then((productResult) => {
         setProduct(productResult);
       });
     }
-  }, [productId]);
+  }, [productSlug]);
 
   return (
     <Layout>
