@@ -5,6 +5,7 @@ import { useState } from "react";
 import { getProductById } from "../../api/products";
 import Card from "react-bootstrap/Card";
 import { Layout } from "../Layout";
+import { Counter } from "../Counter";
 
 function ItemDetailContainer() {
   const { id: productId } = useParams();
@@ -33,6 +34,7 @@ function ItemDetailContainer() {
               <p className="productParagraph">ID: {product.id}</p>
               <p className="productParagraph">Price: ${product.price}</p>
               <p className="productParagraph">Description: {product.title}</p>
+              <Counter />
             </Card>
           </div>
         ) : (

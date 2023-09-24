@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ItemListContainer, ItemDetailContainer } from "../components"; // Barrel de componentes
-import getCategories from "../api/categories";
 
 const routes = createBrowserRouter([
   {
@@ -9,7 +8,7 @@ const routes = createBrowserRouter([
   },
   {
     path: "/category/:id",
-    element: <ItemListContainer greeting="This is a category of" />,
+    element: <ItemListContainer greeting="Products from category" />,
   },
   {
     path: "/item/:id",
