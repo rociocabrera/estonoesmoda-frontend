@@ -25,22 +25,28 @@ function ItemListContainer(props) {
     }
   }, [categoryId]);
 
-
   return (
     <Layout>
-      <h1 className="greeting">{props.greeting}</h1>
-      {products.map((product) => (
-        <Card style={{ width: "18rem" }} key={product.id}>
-          <Card.Img variant="top" src={`/images/${product.img}`} />
-          <Card.Body>
-            <Card.Title>{product.title}</Card.Title>
-            <Card.Text></Card.Text>
-            <Link to={`/item/${product.id}`}>
-              <Button variant="primary">See details</Button>
-            </Link>
-          </Card.Body>
-        </Card>
-      ))}
+      <div className="render">
+        <div className="welcome">
+          <h1 className="greeting">{props.greeting}</h1>
+        </div>
+        <div className="itemlist">
+          {products.map((product) => (
+            <Card className="cardStyle" key={product.id}>
+              <Card.Img className="img" variant="top" src={`/images/${product.img}`} />
+              <Card.Body>
+                <Card.Title className="productTitle">{product.title}</Card.Title>
+                <Link to={`/item/${product.id}`}>
+                  <Button className="buttonDetails" variant="primary">
+                    See details
+                  </Button>
+                </Link>
+              </Card.Body>
+            </Card>
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 }

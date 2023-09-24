@@ -21,20 +21,24 @@ function ItemDetailContainer() {
 
   return (
     <Layout>
-      <h1 style={{ fontWeight: "lighter" }}>Product Details</h1>
-      {product ? (
-        <div>
-          <Card style={{ width: "18rem" }} key={product.id}>
-            <Card.Img variant="top" src={`/images/${product.img}`} />
-            <h2>{product.name}</h2>
-            <p>ID: {product.id}</p>
-            <p>Price: ${product.price}</p>
-            <p>Description: {product.title}</p>
-          </Card>
+      <div className="render">
+        <div className="welcome">
+          <h1 style={{ fontWeight: "lighter" }}>Product Details</h1>
         </div>
-      ) : (
-        <p>Product not found</p>
-      )}
+        {product ? (
+          <div>
+            <Card className="cardProduct" key={product.id}>
+              <Card.Img className="imgProduct" variant="top" src={`/images/${product.img}`} />
+              <h2>{product.name}</h2>
+              <p className="productParagraph">ID: {product.id}</p>
+              <p className="productParagraph">Price: ${product.price}</p>
+              <p className="productParagraph">Description: {product.title}</p>
+            </Card>
+          </div>
+        ) : (
+          <p>Product not found</p>
+        )}
+      </div>
     </Layout>
   );
 }
