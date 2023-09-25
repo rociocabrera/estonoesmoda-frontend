@@ -12,17 +12,20 @@ function ItemListContainer(props) {
 
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState([]);
 
   useEffect(() => {
     setLoading(true);
     if (categorySlug) {
       getCategoryBySlug(categorySlug).then((categoryResult) => {
+        setCategory(categoryResult);
         getProductsByCategoryId(categoryResult.id).then((productsResult) => {
           setProducts(productsResult);
           setLoading(false);
         });
       });
     } else {
+      setCategory({});
       getAllProducts().then((productsResult) => {
         setProducts(productsResult);
         setLoading(false);
@@ -34,7 +37,9 @@ function ItemListContainer(props) {
     <Layout>
       <div className="render">
         <div className="welcome">
-          <h1 className="greeting">{props.greeting}</h1>
+          <h1 className="greeting">
+            {props.greeting} {category.name}
+          </h1>
         </div>
         <ItemList products={products} loading={loading} />
       </div>

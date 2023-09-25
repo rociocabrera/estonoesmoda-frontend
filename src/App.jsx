@@ -6,7 +6,7 @@ import { ItemListContainer, ItemDetailContainer } from "./components"; // Barrel
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <ItemListContainer greeting="Welcome to Esto no es Moda👠" />,
+    element: <ItemListContainer greeting="Welcome to Esto no es Moda" />,
   },
   {
     path: "/category/:id",
