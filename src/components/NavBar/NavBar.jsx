@@ -18,17 +18,17 @@ function OwnNavBar() {
   }, []);
 
   return (
-    <Navbar fixed="top" expand="lg" className={["bg-body-tertiary, navbar"]}>
-      <Container>
-        <Navbar className="bg-body-tertiary navbar">
-          <Container className="navbar-cointainer">
+    <Navbar fixed="top" expand="lg" className="bg-body-tertiary, navBar">
+      <Container className="navBar">
+        <Navbar className="bg-body-tertiary, navBar">
+          <Container>
             <Link to="/">
               <Navbar.Brand className="navbar-brand">
                 <img src="/images/logo.png" className="navBarLogo" alt="React Bootstrap logo" />
               </Navbar.Brand>
             </Link>
             <Link to="/">
-              <Navbar.Brand className="nameStore">Clothing Store✨</Navbar.Brand>
+              <span className="d-none d-lg-inline nameStore">Clothing Store✨</span>
             </Link>
             <Navbar.Toggle className="navBarToggler" aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

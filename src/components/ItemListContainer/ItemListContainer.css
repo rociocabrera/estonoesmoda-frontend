@@ -12,9 +12,10 @@
   margin-top: 2rem;
 }
 .greeting {
+  padding: 5px 20px;
   text-align: center;
   font-weight: lighter;
-  font-size: 3rem;
-  color: #000;
+  font-size: 2rem;
+  color: gray;
   text-transform: uppercase;
 }

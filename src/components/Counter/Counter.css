@@ -2,7 +2,7 @@
   margin: 5px 1px;
   background-color: rgb(238, 143, 152);
   border: 1px solid rgb(238, 143, 152);
-  padding: 10px 15px;
+  padding: 5px 35px;
 }
 
 .counterStyle:hover {
@@ -11,8 +11,8 @@
 }
 
 .countSpan {
-  margin: 1px;
-  padding: 10px 15px;
+  margin: 5px;
+  padding: 10px 25px;
   font-size: 18px;
   font-weight: lighter;
   color: grey;

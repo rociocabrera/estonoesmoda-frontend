@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import { Counter } from "../Counter";
+import "./ItemDetail.css";
 
 export const ItemDetail = (props) => {
   const { product, loading } = props;
@@ -8,7 +9,7 @@ export const ItemDetail = (props) => {
   ) : (
     <div className="render">
       <div className="welcome">
-        <h1 style={{ fontWeight: "lighter", textTransform: "uppercase" }}>Product Details</h1>
+        <h1 className="greeting">Product Details</h1>
       </div>
       {product ? (
         <div>

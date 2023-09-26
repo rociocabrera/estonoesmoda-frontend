@@ -1,20 +1,12 @@
-.navbar {
+.navBar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-height: 6em;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 !important;
+  flex-wrap: wrap;
   background-color: rgb(33, 102, 75);
   position: sticky;
 }
-.navbar-cointainer {
-  background-color: rgb(33, 102, 75);
-  padding: 0 !important;
-}
+
 .navbar-brand {
   margin: 0;
   padding: 0;
@@ -35,8 +27,7 @@
   font-size: 1rem !important;
   font-weight: 300 !important;
   text-transform: uppercase !important;
-  margin: 0;
-  padding: 0 10px;
+  color: #fff !important;
 }
 
 .navBarToggler {
