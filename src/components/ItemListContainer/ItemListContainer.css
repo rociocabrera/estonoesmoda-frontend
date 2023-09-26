@@ -1,10 +1,20 @@
+.render {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
 .greeting {
-  color: #fff;
   text-align: center;
-  font-size: 2rem;
-  font-weight: weight;
-  border: 1px solid rgb(33, 102, 75) #000;
-  padding: 1rem;
-  border-radius: 10px;
-  background-color: rgb(33, 102, 75);
+  font-weight: lighter;
+  font-size: 3rem;
+  color: #000;
+  text-transform: uppercase;
 }
