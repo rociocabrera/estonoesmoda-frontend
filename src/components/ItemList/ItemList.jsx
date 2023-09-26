@@ -2,7 +2,6 @@ import { Item } from "../Item";
 import "./ItemList.css";
 
 const ItemList = (props) => {
-  console.log(props);
   const { products, loading } = props;
   return loading ? (
     <span> Loading... </span>

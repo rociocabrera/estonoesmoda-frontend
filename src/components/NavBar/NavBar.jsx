@@ -24,26 +24,26 @@ function OwnNavBar() {
           <Container className="navbar-cointainer">
             <Link to="/">
               <Navbar.Brand className="navbar-brand">
-                <img src="/images/logo.png" className="logo" alt="React Bootstrap logo" />
+                <img src="/images/logo.png" className="navBarLogo" alt="React Bootstrap logo" />
               </Navbar.Brand>
             </Link>
+            <Link to="/">
+              <Navbar.Brand className="nameStore">Clothing Store✨</Navbar.Brand>
+            </Link>
+            <Navbar.Toggle className="navBarToggler" aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+                <NavDropdown title="Products" id="basic-nav-dropdown">
+                  {categories.map((category) => (
+                    <NavDropdown.Item className="dropdownItem" as={Link} to={`/category/${category.slug}`} key={category.id}>
+                      {category.name}
+                    </NavDropdown.Item>
+                  ))}
+                </NavDropdown>
+              </Nav>
+            </Navbar.Collapse>
           </Container>
         </Navbar>
-        <Link to="/">
-          <Navbar.Brand> ENM Clothing Store✨</Navbar.Brand>
-        </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <NavDropdown title="Products" id="basic-nav-dropdown">
-              {categories.map((category) => (
-                <NavDropdown.Item as={Link} to={`/category/${category.slug}`} key={category.id}>
-                  {category.name}
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
         <CartWidget />
       </Container>
     </Navbar>

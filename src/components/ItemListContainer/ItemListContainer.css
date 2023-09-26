@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
 }
 .welcome {
   display: flex;
@@ -17,4 +16,5 @@
   font-weight: lighter;
   font-size: 3rem;
   color: #000;
+  text-transform: uppercase;
 }

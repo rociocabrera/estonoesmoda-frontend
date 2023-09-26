@@ -2,18 +2,17 @@
   margin: 5px 1px;
   background-color: rgb(238, 143, 152);
   border: 1px solid rgb(238, 143, 152);
-  padding: 8px 50px;
+  padding: 10px 15px;
 }
 
 .counterStyle:hover {
   background-color: rgb(238, 143, 152);
-  border: 1px solid rgb(238, 143, 152);
-  padding: 8px 50px;
+  border: 1px solid rgb(188, 178, 178);
 }
 
 .countSpan {
   margin: 1px;
-  padding: 9px 15px;
+  padding: 10px 15px;
   font-size: 18px;
   font-weight: lighter;
   color: grey;

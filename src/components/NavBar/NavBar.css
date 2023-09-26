@@ -1,10 +1,18 @@
 .navbar {
-  background-color: rgb(33, 102, 75);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 6em;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
   padding: 0 !important;
-  margin: 0 !important;
+  background-color: rgb(33, 102, 75);
+  position: sticky;
 }
-
 .navbar-cointainer {
+  background-color: rgb(33, 102, 75);
   padding: 0 !important;
 }
 .navbar-brand {
@@ -12,12 +20,51 @@
   padding: 0;
   color: #fff !important;
 }
+.navBarLogo {
+  height: 6em;
+  width: 6em;
+  pointer-events: none;
+  border-radius: 50%;
+  background-color: rgb(33, 102, 75);
+}
+
 .color-white {
   color: #fff !important;
 }
-#basic-nav-dropdown {
-  color: #fff !important;
-  font-weight: 600 !important;
+.nameStore {
+  font-size: 1rem !important;
+  font-weight: 300 !important;
+  text-transform: uppercase !important;
+  margin: 0;
+  padding: 0 10px;
 }
 
-/* text-transform: capitalize !important;*/
+.navBarToggler {
+  font-weight: 300 !important;
+  text-transform: uppercase !important;
+  font-size: 1rem !important;
+  border-color: transparent !important;
+}
+.navBarToggler:hover {
+  color: transparent !important;
+  transition: all 0.2s !important;
+}
+
+#basic-nav-dropdown {
+  border-color: transparent !important;
+  color: #fff !important;
+  font-weight: 300 !important;
+  text-transform: uppercase !important;
+  font-size: 1rem !important;
+}
+.dropdownItem {
+  color: #000 !important;
+  font-weight: 200 !important;
+  text-transform: uppercase !important;
+}
+.dropdownItem:hover {
+  background-color: rgb(238, 143, 152) !important;
+  transition: 0.2s !important;
+  color: #fff !important;
+  font-weight: 200 !important;
+}

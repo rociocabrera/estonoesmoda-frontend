@@ -1,5 +1,9 @@
 .cardProduct {
-  width: 20rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 6em;
+  width: 500px;
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 0px;
@@ -12,7 +16,16 @@
   font-weight: 300;
   transition: all 0.5s ease;
 }
-
+.cardContent {
+  display: flex;
+  flex-direction: column;
+}
+.cardContent h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #181616;
+  margin-bottom: 0px !important;
+}
 .imgProduct {
   width: 100%;
   height: 300px;
@@ -23,5 +36,5 @@
   font-weight: lighter;
   font-size: 1.2rem;
   color: #181616;
-  margin-bottom: 0px !important;
+  margin-bottom: 5px !important;
 }
