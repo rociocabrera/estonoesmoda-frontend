@@ -1,10 +1,11 @@
 import { Item } from "../Item";
 import "./ItemList.css";
+import { Loader } from "../Loader";
 
 const ItemList = (props) => {
   const { products, loading } = props;
   return loading ? (
-    <span> Loading... </span>
+    <Loader />
   ) : (
     <div className="itemlist">
       {products.map((product) => (

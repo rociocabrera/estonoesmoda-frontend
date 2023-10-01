@@ -23,7 +23,12 @@ function ItemDetailContainer() {
 
   return (
     <Layout>
-      <ItemDetail product={product} loading={loading} />
+      <div className="render">
+        <div className="welcome">
+          <h1 className="greeting">Product Details</h1>
+        </div>
+        <ItemDetail product={product} loading={loading} />
+      </div>
     </Layout>
   );
 }
