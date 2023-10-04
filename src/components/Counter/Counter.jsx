@@ -14,7 +14,7 @@ function Counter() {
     }
   };
   return (
-    <div>
+    <div className="counterBorder">
       <button className="counterStyle" onClick={handleSubstract}>
         -
       </button>

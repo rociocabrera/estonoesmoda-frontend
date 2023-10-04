@@ -54,7 +54,7 @@
   text-transform: uppercase !important;
 }
 .dropdownItem:hover {
-  background-color: rgb(238, 143, 152) !important;
+  background-color: rgb(33, 102, 75) !important;
   transition: 0.2s !important;
   color: #fff !important;
   font-weight: 200 !important;
