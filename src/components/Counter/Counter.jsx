@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Counter.css";
 
-function Counter() {
+function Counter({ onSetCount }) {
   const [count, setCount] = useState(0);
 
   const handleAdd = () => {
@@ -13,6 +13,11 @@ function Counter() {
       setCount(count - 1);
     }
   };
+
+  useEffect(() => {
+    onSetCount(count);
+  }, [count, onSetCount]);
+
   return (
     <div className="counterBorder">
       <button className="counterStyle" onClick={handleSubstract}>

@@ -3,9 +3,20 @@ import "./ItemDetail.css";
 import { Counter } from "../Counter";
 import { Loader } from "../Loader";
 import { AddToCart } from "../AddToCart";
+import { useState } from "react";
 
 export const ItemDetail = (props) => {
-  const { product, loading } = props;
+  const { product, loading, addToCart } = props;
+
+  const [count, setCount] = useState(0);
+
+  const onSetCount = (count) => {
+    setCount(count);
+  };
+
+  const onClickAddToCart = () => {
+    addToCart(product, count);
+  };
 
   return loading ? (
     <Loader />
@@ -18,8 +29,8 @@ export const ItemDetail = (props) => {
           <p className="productParagraph">{product.title}</p>
           <p className="productParagraph">${product.price}</p>
           {/* add product description */}
-          <Counter />
-          <AddToCart />
+          <Counter onSetCount={onSetCount} />
+          <AddToCart onClickAddToCart={onClickAddToCart} />
         </div>
       </Card>
     </div>

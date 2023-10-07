@@ -1,9 +1,13 @@
 import "./AddToCart.css";
 
-export const AddToCart = () => {
+export const AddToCart = (props) => {
+  const { onClickAddToCart } = props;
+
   return (
     <div className="addToCart">
-      <button className="addToCartButton">Add to cart</button>
+      <button className="addToCartButton" onClick={onClickAddToCart}>
+        Add to cart
+      </button>
     </div>
   );
 };

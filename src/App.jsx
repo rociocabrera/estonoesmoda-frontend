@@ -2,6 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ItemListContainer, ItemDetailContainer } from "./components"; // Barrel de componentes
+import CartContextProvider from "./context/CartContext";
+
 
 const routes = createBrowserRouter([
   {
@@ -19,7 +21,11 @@ const routes = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={routes} />;
+  return (
+    <CartContextProvider>
+      <RouterProvider router={routes} />
+    </CartContextProvider>
+  );
 }
 
 export default App;
