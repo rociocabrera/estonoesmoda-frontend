@@ -4,6 +4,8 @@ import { Counter } from "../Counter";
 import { Loader } from "../Loader";
 import { AddToCart } from "../AddToCart";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const ItemDetail = (props) => {
   const { product, loading, addToCart } = props;
@@ -16,6 +18,7 @@ export const ItemDetail = (props) => {
 
   const onClickAddToCart = () => {
     addToCart(product, count);
+    toast.success("Product added to cart");
   };
 
   return loading ? (
@@ -31,6 +34,7 @@ export const ItemDetail = (props) => {
           {/* add product description */}
           <Counter onSetCount={onSetCount} />
           <AddToCart onClickAddToCart={onClickAddToCart} />
+          <ToastContainer position="top-center" />
         </div>
       </Card>
     </div>
