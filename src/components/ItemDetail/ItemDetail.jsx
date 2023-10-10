@@ -10,11 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 export const ItemDetail = (props) => {
   const { product, loading, addToCart } = props;
 
-  const [count, setCount] = useState(0);
-
-  const onSetCount = (count) => {
-    setCount(count);
-  };
+  const [count, setCount] = useState(1);
 
   const onClickAddToCart = () => {
     addToCart(product, count);
@@ -32,7 +28,7 @@ export const ItemDetail = (props) => {
           <p className="productParagraph">{product.title}</p>
           <p className="productParagraph">${product.price}</p>
           {/* add product description */}
-          <Counter onSetCount={onSetCount} />
+          <Counter setCount={setCount} count={count} />
           <AddToCart onClickAddToCart={onClickAddToCart} />
           <ToastContainer position="top-center" />
         </div>

@@ -8,15 +8,15 @@ function CartWidget() {
   const { countTotalItems } = useContext(CartContext);
 
   return (
-    <div className={["cart-icon, bagcart"]}>
-      <Link to="/cart">
+    <Link to="/cart">
+      <div className={["cart-icon, bagcart"]}>
         <BagCheck />
-      </Link>
-      <i className="fa fa-shopping-cart"></i>
-      <span id="cart-count" className="counter">
-        {countTotalItems()}
-      </span>
-    </div>
+        <i className="fa fa-shopping-cart"></i>
+        <span id="cart-count" className="counter">
+          {countTotalItems()}
+        </span>
+      </div>
+    </Link>
   );
 }
 

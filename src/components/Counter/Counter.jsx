@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
 import "./Counter.css";
 
-function Counter({ onSetCount }) {
-  const [count, setCount] = useState(1);
-
+function Counter({ count, setCount }) {
   const handleAdd = () => {
     setCount(count + 1);
   };
@@ -13,10 +10,6 @@ function Counter({ onSetCount }) {
       setCount(count - 1);
     }
   };
-
-  useEffect(() => {
-    onSetCount(count);
-  }, [count, onSetCount]);
 
   return (
     <div className="counterBorder">
