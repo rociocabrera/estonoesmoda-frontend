@@ -1,0 +1,42 @@
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+}
+.cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  padding: 0 1rem;
+  margin: 10px;
+}
+.imgShoppingCart {
+  width: 200px;
+  height: 200px;
+}
+.cartImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cartParagraph {
+  font-size: 0.9rem;
+  font-weight: lighter;
+  color: #000;
+  margin: 5px;
+}
+.totalPrice {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  margin: 5px;
+}

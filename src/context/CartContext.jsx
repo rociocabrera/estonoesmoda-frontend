@@ -1,18 +1,36 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext(); // creo el contexto
 
 export default function CartContextProvider({ defaultValue = [], children }) {
-  // SE INICIALIZA SIEMPRE CON LO QUE HAY EN LOCAL STORAGE
   const [cart, setCart] = useState(defaultValue);
+
+  const loadCart = () => {
+    const cartString = localStorage.getItem("cart") || "[]";
+    const productCart = JSON.parse(cartString);
+    setCart(productCart);
+  };
+
+  const saveCart = (newCart) => {
+    const cartString = JSON.stringify(newCart);
+    localStorage.setItem("cart", cartString);
+  };
+
+  useEffect(() => {
+    loadCart();
+  }, []);
 
   const countTotalItems = () => {
     return cart.reduce((acc, { quantity }) => acc + quantity, 0);
   };
 
+  const getTotalPrice = () => {
+    return cart.reduce((acc, { item, quantity }) => acc + item.price * quantity, 0);
+  };
+
   const onSetCart = (newCart) => {
     setCart(newCart);
-    // GUARDAR EN LOCAL STORAGE
+    saveCart(newCart);
   };
 
   function getFromCart(id) {
@@ -25,20 +43,30 @@ export default function CartContextProvider({ defaultValue = [], children }) {
 
   function addToCart(item, quantity) {
     if (isInCart(item.id)) {
-      // NO DECIR QUE YA ESTABA, ES AGREGAR LA CANTIDAD LA NUEVA A LA QUE YA ESTABA
       const existingItem = getFromCart(item.id);
       const newQuantity = existingItem.quantity + quantity;
-      const cartWithoutExistingItem = cart.filter((item) => item.id !== existingItem.id);
-      const newCart = [...cartWithoutExistingItem, { item, quantity: newQuantity }];
-      onSetCart(newCart);
-
-      console.log("El item se ACTUALIZO en el carrito");
+      const currentItemIndex = cart.findIndex(({ item }) => item.id === existingItem.item.id);
+      const cartWithoutExistingItem = cart.filter(({ item }) => item.id !== existingItem.item.id);
+      cartWithoutExistingItem.splice(currentItemIndex, 0, { item, quantity: newQuantity });
+      onSetCart(cartWithoutExistingItem);
       return;
     }
-    console.log("El item se AGREGO en el carrito");
-    const newCart = [...cart, { item, quantity }];
+    onSetCart([...cart, { item, quantity }]);
+  }
+
+  function removeFromCart(id) {
+    const newCart = cart.filter((item) => item.item.id !== id);
+
     onSetCart(newCart);
   }
 
-  return <CartContext.Provider value={{ cart, addToCart, isInCart, countTotalItems }}>{children}</CartContext.Provider>;
+  function clearCart() {
+    onSetCart([]);
+  }
+
+  function finishPurchase() {
+    const newCart = [];
+    onSetCart(newCart);
+  }
+  return <CartContext.Provider value={{ cart, addToCart, getTotalPrice, isInCart, countTotalItems, removeFromCart, clearCart, finishPurchase }}>{children}</CartContext.Provider>;
 }
