@@ -1,6 +1,6 @@
 import "./AddToCart.css";
 
-export const AddToCart = (props) => {
+export const AddItemButton = (props) => {
   const { onClickAddToCart } = props;
 
   return (
@@ -12,4 +12,4 @@ export const AddToCart = (props) => {
   );
 };
 
-export default AddToCart;
+export default AddItemButton;

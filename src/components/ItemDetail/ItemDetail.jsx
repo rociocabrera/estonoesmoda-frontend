@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 import "./ItemDetail.css";
 import { Counter } from "../Counter";
 import { Loader } from "../Loader";
-import { AddToCart } from "../AddToCart";
+import { AddItemButton } from "./AddItemButton";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -30,7 +30,7 @@ export const ItemDetail = (props) => {
           <p className="productParagraph">${product.price}</p>
           {/* add product description */}
           <Counter setCount={setCount} count={count} />
-          <AddToCart onClickAddToCart={onClickAddToCart} />
+          <AddItemButton onClickAddToCart={onClickAddToCart} />
           <ToastContainer position="top-center" />
         </div>
       </Card>
