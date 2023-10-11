@@ -1,11 +1,11 @@
 .bagcart {
   color: #fff;
-  font-size: 30px;
+  font-size: 25px;
   margin-right: 10px;
   margin-top: 10px;
   cursor: pointer;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   justify-content: center;

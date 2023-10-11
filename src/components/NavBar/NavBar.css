@@ -1,20 +1,13 @@
 .navBar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
   background-color: rgb(33, 102, 75);
-  position: sticky;
+  height: 100px;
 }
 
-.navbar-brand {
-  margin: 0;
-  padding: 0;
-  color: #fff !important;
-}
 .navBarLogo {
-  height: 6em;
-  width: 6em;
+  height: 100px;
+  width: auto;
   pointer-events: none;
   border-radius: 50%;
   background-color: rgb(33, 102, 75);
