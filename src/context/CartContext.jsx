@@ -69,6 +69,7 @@ export default function CartContextProvider({ defaultValue = [], children }) {
     const orderData = {
       items: cart.map(({ item, quantity }) => ({ id: item.id, quantity, price: item.price })),
       total: getTotalPrice(),
+      date: new Date(),
     };
     const orderId = await createOrder(orderData);
     toast.success(`Order with ID ${orderId} created!`, { autoClose: 10000 });
