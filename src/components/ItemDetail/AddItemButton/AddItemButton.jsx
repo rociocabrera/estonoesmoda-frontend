@@ -1,4 +1,4 @@
-import "./AddToCart.css";
+import "./AddItemButton.css";
 
 export const AddItemButton = (props) => {
   const { onClickAddToCart } = props;

@@ -1,6 +1,6 @@
-import "./Counter.css";
+import "./ItemQuantitySelector.css";
 
-function Counter({ count, setCount }) {
+function ItemQuantitySelector({ count, setCount }) {
   const handleAdd = () => {
     setCount(count + 1);
   };
@@ -24,4 +24,4 @@ function Counter({ count, setCount }) {
   );
 }
 
-export default Counter;
+export default ItemQuantitySelector;

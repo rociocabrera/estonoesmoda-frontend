@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import "./ItemDetail.css";
-import { Counter } from "../Counter";
+import { ItemQuantitySelector } from "./ItemQuantitySelector";
 import { Loader } from "../Loader";
 import { AddItemButton } from "./AddItemButton";
 import { useState } from "react";
@@ -29,7 +29,7 @@ export const ItemDetail = (props) => {
           <p>{product.description}</p>
           <p className="productParagraph">${product.price}</p>
           {/* add product description */}
-          <Counter setCount={setCount} count={count} />
+          <ItemQuantitySelector setCount={setCount} count={count} />
           <AddItemButton onClickAddToCart={onClickAddToCart} />
           <ToastContainer position="top-center" />
         </div>

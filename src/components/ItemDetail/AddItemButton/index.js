@@ -1,1 +1,1 @@
-export { default as AddToCart } from "./AddItemButton";
+export { default as AddItemButton } from "./AddItemButton";
