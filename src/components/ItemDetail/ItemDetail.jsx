@@ -25,7 +25,8 @@ export const ItemDetail = (props) => {
         <Card.Img className="imgProduct" variant="top" src={`/images/${product.img}`} />
         <div className="cardDetail">
           <h2>{product.name}</h2>
-          <p className="productParagraph">{product.title}</p>
+          <h3>{product.title}</h3>
+          <p>{product.description}</p>
           <p className="productParagraph">${product.price}</p>
           {/* add product description */}
           <Counter setCount={setCount} count={count} />
