@@ -5,20 +5,18 @@ import "./Item.css";
 
 const Item = ({ product }) => {
   return (
-    <div className="itemContainer">
-      <Card className="cardStyle" key={product.id}>
-        <Card.Img className="CardImg" variant="top" src={product.img} />
-        <Card.Body>
-          <Card.Title className="productTitle">{product.title}</Card.Title>
-          <Card.Text className="productPrice">${product.price}</Card.Text>
-          <Link to={`/item/${product.slug}`}>
-            <Button className="buttonDetails" variant="primary">
-              See details
-            </Button>
-          </Link>
-        </Card.Body>
-      </Card>
-    </div>
+    <Card className="cardStyle" key={product.id}>
+      <Card.Img className="cardImg" variant="top" src={product.img} />
+      <Card.Body>
+        <Card.Title className="productTitle">{product.title}</Card.Title>
+        <Card.Text className="productPrice">${product.price}</Card.Text>
+        <Link to={`/item/${product.slug}`}>
+          <Button className="buttonDetails" variant="primary">
+            See details
+          </Button>
+        </Link>
+      </Card.Body>
+    </Card>
   );
 };
 
