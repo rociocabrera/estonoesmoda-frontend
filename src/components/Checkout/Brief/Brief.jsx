@@ -4,11 +4,11 @@ const Brief = ({ getTotalPrice, clearCart, finishPurchase }) => {
   const total = getTotalPrice();
   return (
     <div>
-      <p>Total: ${total}</p>
+      <p className="totalPurchase">Total: ${total}</p>
       {total > 0 && (
         <>
-          <button onClick={() => clearCart()}>Clear cart</button>
-          <button onClick={() => finishPurchase()}>Finish purchase</button>{" "}
+          <button className="clearCart" onClick={() => clearCart()}>Clear cart</button>
+          <button className="finishPurchase" onClick={() => finishPurchase()}>Finish purchase</button>{" "}
         </>
       )}
     </div>
