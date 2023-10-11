@@ -1,4 +1,6 @@
 import { createContext, useEffect, useState } from "react";
+import { createOrder } from "../api/orders";
+import { toast } from "react-toastify";
 
 export const CartContext = createContext(); // creo el contexto
 
@@ -56,7 +58,6 @@ export default function CartContextProvider({ defaultValue = [], children }) {
 
   function removeFromCart(id) {
     const newCart = cart.filter((item) => item.item.id !== id);
-
     onSetCart(newCart);
   }
 
@@ -64,7 +65,13 @@ export default function CartContextProvider({ defaultValue = [], children }) {
     onSetCart([]);
   }
 
-  function finishPurchase() {
+  async function finishPurchase() {
+    const orderData = {
+      items: cart.map(({ item, quantity }) => ({ id: item.id, quantity, price: item.price })),
+      total: getTotalPrice(),
+    };
+    const orderId = await createOrder(orderData);
+    toast.success(`Order with ID ${orderId} created!`, { autoClose: 10000 });
     const newCart = [];
     onSetCart(newCart);
   }
