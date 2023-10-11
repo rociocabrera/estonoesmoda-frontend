@@ -7,7 +7,7 @@ const CartItem = ({ item, quantity, removeFromCart }) => {
     <div key={item.id} className="cart">
       <span className="imgShoppingCart">
         {" "}
-        <Card.Img className="cartImg" variant="top" src={`/images/${item.img}`} />
+        <Card.Img className="cartImg" variant="top" src={item.img} />
       </span>
       <span className="cartParagraph">
         <p>{item.title}</p>

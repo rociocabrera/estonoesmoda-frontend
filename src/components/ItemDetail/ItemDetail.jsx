@@ -23,7 +23,7 @@ export const ItemDetail = (props) => {
   ) : product ? (
     <div className="cardItemDetail">
       <Card className="cardProduct" key={product.id}>
-        <Card.Img className="imgProduct" variant="top" src={`/images/${product.img}`} />
+        <Card.Img className="imgProduct" variant="top" src={product.img} />
         <div className="cardDetail">
           <Description product={product} />
           <ItemQuantitySelector setCount={setCount} count={count} />

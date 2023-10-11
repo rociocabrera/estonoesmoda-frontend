@@ -7,7 +7,7 @@ const Item = ({ product }) => {
   return (
     <div className="itemContainer">
       <Card className="cardStyle" key={product.id}>
-        <Card.Img className="CardImg" variant="top" src={`/images/${product.img}`} />
+        <Card.Img className="CardImg" variant="top" src={product.img} />
         <Card.Body>
           <Card.Title className="productTitle">{product.title}</Card.Title>
           <Card.Text className="productPrice">${product.price}</Card.Text>

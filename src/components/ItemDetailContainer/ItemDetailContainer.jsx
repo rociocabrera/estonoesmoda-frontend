@@ -6,12 +6,11 @@ import { Layout } from "../Layout";
 import { ItemDetail } from "../ItemDetail";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import "./ItemDetailContainer.css";
 
 function ItemDetailContainer() {
   const { addToCart } = useContext(CartContext);
-
   const { id: productSlug } = useParams();
-
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState([]);
 
