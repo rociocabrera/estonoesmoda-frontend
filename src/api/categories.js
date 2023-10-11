@@ -1,4 +1,4 @@
-const url = "https://rociocabrera.github.io/api_estonoesmoda/categories.json";
+const url = `${import.meta.env.VITE_BASE_API_URL}/categories.json`;
 
 export const getCategories = async () => {
   try {
