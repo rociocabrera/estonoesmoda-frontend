@@ -9,11 +9,13 @@ const CartItem = ({ item, quantity, removeFromCart }) => {
         <Card.Img className="cartImg" variant="top" src={item.img} />
       </span>
       <span className="cartParagraph">
-        <p>{item.title}</p>
-        <p>Price: ${item.price}</p>
+        <h3>{item.title}</h3>
+        <p >Price: ${item.price}</p>
         <p>Quantity: {quantity} units</p>
         <p>Subtotal: ${item.price * quantity}</p>
-        <button className="removeProduct" onClick={() => removeFromCart(item.id)}>Remove product</button>
+        <button className="removeProduct" onClick={() => removeFromCart(item.id)}>
+          Remove product
+        </button>
       </span>
     </div>
   );

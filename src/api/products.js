@@ -15,7 +15,6 @@ export const getProductsByCategoryId = async (categoryId) => {
 
 export const getProductBySlug = async (slug) => {
   try {
-    console.log(slug);
     const productsRef = collection(db, "products");
     const q = query(productsRef, where("slug", "==", slug));
     const response = await getDocs(q);
