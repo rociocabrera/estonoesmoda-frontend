@@ -6,6 +6,7 @@ import { AddItemButton } from "./AddItemButton";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Description } from "./Description";
 
 export const ItemDetail = (props) => {
   const { product, loading, addToCart } = props;
@@ -24,11 +25,7 @@ export const ItemDetail = (props) => {
       <Card className="cardProduct" key={product.id}>
         <Card.Img className="imgProduct" variant="top" src={`/images/${product.img}`} />
         <div className="cardDetail">
-          <h2>{product.name}</h2>
-          <h3>{product.title}</h3>
-          <p>{product.description}</p>
-          <p className="productParagraph">${product.price}</p>
-          {/* add product description */}
+          <Description product={product} />
           <ItemQuantitySelector setCount={setCount} count={count} />
           <AddItemButton onClickAddToCart={onClickAddToCart} />
           <ToastContainer position="top-center" />

@@ -31,12 +31,3 @@
   width: 60%;
   padding: 20px;
 }
-
-.productParagraph {
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: lighter;
-  margin: 10px 0;
-  color: black;
-  margin-bottom: 5px !important;
-}
