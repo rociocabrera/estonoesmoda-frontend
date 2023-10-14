@@ -22,16 +22,15 @@ function OwnNavBar() {
       <Container>
         <Link to="/">
           <Navbar.Brand className="navbar-brand">
-            <img src="/images/logo.png" className="navBarLogo" alt="React Bootstrap logo" />
+            <img src="/images/logo.png" className="navBarLogo" alt="Esto no es Moda - logo" />
           </Navbar.Brand>
         </Link>
         <Link to="/">
           <span className="d-none d-lg-inline nameStore">Clothing Store✨</span>
         </Link>
-        <Navbar.Toggle className="navBarToggler" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <NavDropdown title="Products" id="basic-nav-dropdown">
+          <Nav className={["me-auto", "navBarContent"]}>
+            <NavDropdown title="Products">
               {categories.map((category) => (
                 <NavDropdown.Item className="dropdownItem" as={Link} to={`/category/${category.slug}`} key={category.id}>
                   {category.name}

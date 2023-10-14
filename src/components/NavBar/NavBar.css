@@ -13,42 +13,42 @@
   background-color: rgb(33, 102, 75);
 }
 
-.color-white {
-  color: #fff !important;
-}
 .nameStore {
-  font-size: 1rem !important;
-  font-weight: 300 !important;
-  text-transform: uppercase !important;
-  color: #fff !important;
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fff;
 }
 
-.navBarToggler {
-  font-weight: 300 !important;
-  text-transform: uppercase !important;
-  font-size: 1rem !important;
-  border-color: transparent !important;
-}
-.navBarToggler:hover {
-  color: transparent !important;
-  transition: all 0.2s !important;
+.navBarContent .dropdown-toggle {
+  margin-left: 20px;
+  color: white !important;
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
-#basic-nav-dropdown {
-  border-color: transparent !important;
-  color: #fff !important;
-  font-weight: 300 !important;
-  text-transform: uppercase !important;
-  font-size: 1rem !important;
+.navBarDropdown a span {
+  border-color: transparent;
+  color: #000;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 1rem;
 }
 .dropdownItem {
-  color: #000 !important;
-  font-weight: 200 !important;
-  text-transform: uppercase !important;
+  color: #000;
+  font-weight: 200;
+  text-transform: uppercase;
 }
 .dropdownItem:hover {
-  background-color: rgb(33, 102, 75) !important;
-  transition: 0.2s !important;
-  color: #fff !important;
-  font-weight: 200 !important;
+  background-color: rgb(33, 102, 75);
+  transition: 0.2s;
+  color: #fff;
+  font-weight: 200;
+}
+
+@media screen and (max-width: 800px) {
+  .navBarContent .dropdown-toggle {
+    margin-left: 0px;
+  }
 }
