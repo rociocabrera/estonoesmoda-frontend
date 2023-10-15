@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { createOrder } from "../api/orders";
 import { toast } from "react-toastify";
 
-export const CartContext = createContext(); // creo el contexto
+export const CartContext = createContext();
 
 export default function CartContextProvider({ defaultValue = [], children }) {
   const [cart, setCart] = useState(defaultValue);

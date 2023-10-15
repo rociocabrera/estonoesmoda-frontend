@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ItemListContainer, ItemDetailContainer } from "./components"; // Barrel de componentes
+import { ItemListContainer, ItemDetailContainer } from "./components";
 import CartContextProvider from "./context/CartContext";
 import CartContainer from "./components/CartContainer/CartContainer";
 
