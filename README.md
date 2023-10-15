@@ -16,7 +16,15 @@ git clone https://github.com/rociocabrera/estonoesmoda-frontend.git
 cd estonoesmoda-frontend
 ```
 
-3. Install any necessary dependencies using npm or yarn:
+3. Create .env file in root directory (see .env.example)
+
+```bash
+cp .env.example .env
+```
+
+Complete required environment variables
+
+4. Install any necessary dependencies using npm or yarn:
 
 ```bash
 npm install
@@ -28,7 +36,7 @@ or
 yarn
 ```
 
-4. Start the development server using Vite:
+5. Start the development server using Vite:
 
 ```bash
 npm run dev

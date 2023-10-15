@@ -1,0 +1,26 @@
+.totalPurchase {
+  font-size: 3rem;
+  color: #000;
+  margin: 5px;
+  font-weight: lighter;
+}
+
+.clearCart,
+.finishPurchase {
+  margin: 2px;
+  padding: 6px 15px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgb(33, 102, 75);
+}
+
+.clearCart {
+  color: black;
+  background-color: rgb(254, 254, 254);
+  border: 1px solid black;
+}

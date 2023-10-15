@@ -1,20 +1,18 @@
-import { useState } from "react";
-import "./Counter.css";
+import "./ItemQuantitySelector.css";
 
-function Counter() {
-  const [count, setCount] = useState(0);
-
+function ItemQuantitySelector({ count, setCount }) {
   const handleAdd = () => {
     setCount(count + 1);
   };
 
   const handleSubstract = () => {
-    if (count > 0) {
+    if (count > 1) {
       setCount(count - 1);
     }
   };
+
   return (
-    <div>
+    <div className="counterBorder">
       <button className="counterStyle" onClick={handleSubstract}>
         -
       </button>
@@ -26,4 +24,4 @@ function Counter() {
   );
 }
 
-export default Counter;
+export default ItemQuantitySelector;

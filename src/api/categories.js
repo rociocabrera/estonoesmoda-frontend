@@ -1,9 +1,11 @@
-const url = "https://rociocabrera.github.io/api_estonoesmoda/categories.json";
+import { db } from "../db/db";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export const getCategories = async () => {
   try {
-    const response = await fetch(url);
-    const categories = await response.json();
+    const categoriesRef = collection(db, "categories");
+    const response = await getDocs(categoriesRef);
+    const categories = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
     return categories;
   } catch (error) {
     console.log(error);
@@ -12,9 +14,11 @@ export const getCategories = async () => {
 
 export const getCategoryBySlug = async (slug) => {
   try {
-    const response = await fetch(url);
-    const categories = await response.json();
-    return categories.find((category) => category.slug === slug);
+    const categoriesRef = collection(db, "categories");
+    const q = query(categoriesRef, where("slug", "==", slug));
+    const response = await getDocs(q);
+    const categories = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    return categories?.[0];
   } catch (error) {
     console.log(error);
   }

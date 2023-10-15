@@ -1,10 +1,13 @@
-const url = "https://rociocabrera.github.io/api_estonoesmoda/products.json";
+import { db } from "../db/db";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export const getProductsByCategoryId = async (categoryId) => {
   try {
-    const response = await fetch(url);
-    const products = await response.json();
-    return products.filter((product) => product.category.toString() === categoryId.toString());
+    const productsRef = collection(db, "items");
+    const q = query(productsRef, where("category", "==", categoryId));
+    const response = await getDocs(q);
+    const products = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    return products;
   } catch (error) {
     console.log(error);
   }
@@ -12,9 +15,11 @@ export const getProductsByCategoryId = async (categoryId) => {
 
 export const getProductBySlug = async (slug) => {
   try {
-    const response = await fetch(url);
-    const product = await response.json();
-    return product.find((product) => product.slug.toString() === slug);
+    const productsRef = collection(db, "items");
+    const q = query(productsRef, where("slug", "==", slug));
+    const response = await getDocs(q);
+    const products = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    return products?.[0];
   } catch (error) {
     console.log(error);
   }
@@ -22,8 +27,9 @@ export const getProductBySlug = async (slug) => {
 
 export const getAllProducts = async () => {
   try {
-    const response = await fetch(url);
-    const products = await response.json();
+    const productsRef = collection(db, "items");
+    const response = await getDocs(productsRef);
+    const products = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
     return products;
   } catch (error) {
     console.log(error);
