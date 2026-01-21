@@ -7,7 +7,7 @@ export const createOrder = async (orderData) => {
     const createdOrder = await addDoc(ordersRef, orderData);
     return createdOrder.id;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 

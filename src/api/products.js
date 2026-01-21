@@ -9,7 +9,7 @@ export const getProductsByCategoryId = async (categoryId) => {
     const products = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
     return products;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 
@@ -21,7 +21,7 @@ export const getProductBySlug = async (slug) => {
     const products = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
     return products?.[0];
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 
@@ -32,7 +32,7 @@ export const getAllProducts = async () => {
     const products = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
     return products;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 

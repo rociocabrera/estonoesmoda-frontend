@@ -8,7 +8,7 @@ export const getCategories = async () => {
     const categories = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
     return categories;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 
@@ -20,7 +20,7 @@ export const getCategoryBySlug = async (slug) => {
     const categories = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
     return categories?.[0];
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 
