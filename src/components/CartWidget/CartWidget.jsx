@@ -9,7 +9,7 @@ function CartWidget() {
 
   return (
     <Link to="/cart">
-      <div className={["cart-icon, bagcart"]}>
+      <div className="cart-icon bagcart">
         <BagCheck />
         <i className="fa fa-shopping-cart"></i>
         <span id="cart-count" className="counter">
