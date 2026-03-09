@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { createOrder } from "../api/orders";
 import { toast } from "react-toastify";
+import { sendOrderConfirmation } from "../api/emailService";
 
 export const CartContext = createContext();
 
@@ -61,20 +62,62 @@ export default function CartContextProvider({ defaultValue = [], children }) {
     onSetCart(newCart);
   }
 
+  function updateQuantity(id, newQuantity) {
+    if (newQuantity < 1) {
+      removeFromCart(id);
+      return;
+    }
+    const newCart = cart.map((cartItem) =>
+      cartItem.item.id === id
+        ? { ...cartItem, quantity: newQuantity }
+        : cartItem
+    );
+    onSetCart(newCart);
+  }
+
   function clearCart() {
     onSetCart([]);
   }
 
-  async function finishPurchase() {
+  async function finishPurchase(customerData) {
     const orderData = {
-      items: cart.map(({ item, quantity }) => ({ id: item.id, quantity, price: item.price })),
+      items: cart.map(({ item, quantity }) => ({
+        id: item.id,
+        title: item.title,
+        img: item.img,
+        quantity,
+        price: item.price
+      })),
       total: getTotalPrice(),
       date: new Date(),
+      status: "pending",
+      customer: customerData?.customer || null,
+      shipping: customerData?.shipping || null,
+      payment: customerData?.payment || null
     };
-    const orderId = await createOrder(orderData);
-    toast.success(`Order with ID ${orderId} created!`, { autoClose: 10000 });
+    let orderId = null;
+    try {
+      orderId = await createOrder(orderData);
+      console.log(`Pedido creado con ID: ${orderId}`);
+
+      // Enviar email de confirmación al cliente
+      if (customerData?.customer?.email) {
+        try {
+          await sendOrderConfirmation({
+            ...orderData,
+            orderId
+          });
+          console.log("Email de confirmación enviado");
+        } catch (emailError) {
+          console.log("Error al enviar email de confirmación:", emailError);
+        }
+      }
+    } catch (error) {
+      console.log("Error al guardar en Firebase, pero el pedido se procesa igualmente:", error);
+    }
     const newCart = [];
     onSetCart(newCart);
+    return orderId;
   }
-  return <CartContext.Provider value={{ cart, addToCart, getTotalPrice, isInCart, countTotalItems, removeFromCart, clearCart, finishPurchase }}>{children}</CartContext.Provider>;
+  return <CartContext.Provider value={{ cart, addToCart, getTotalPrice, isInCart, countTotalItems, removeFromCart, updateQuantity, clearCart, finishPurchase }}>{children}</CartContext.Provider>;
 }
