@@ -1,11 +1,11 @@
 import { Item } from "../Item";
 import "./ItemList.css";
-import { Loader } from "../Loader";
+import { ProductSkeletonGrid } from "../ProductSkeleton";
 
 const ItemList = (props) => {
   const { products, loading } = props;
   return loading ? (
-    <Loader />
+    <ProductSkeletonGrid count={8} />
   ) : (
     <div className="itemlist">
       {products.map((product) => (
