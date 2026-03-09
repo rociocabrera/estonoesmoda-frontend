@@ -1,16 +1,18 @@
 .navBar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: rgb(33, 102, 75);
   height: 100px;
 }
 
 .navBarLogo {
-  height: 100px;
+  height: 80px;
   width: auto;
   pointer-events: none;
   border-radius: 50%;
   background-color: rgb(33, 102, 75);
+  vertical-align: middle;
 }
 
 .nameStore {
@@ -20,12 +22,70 @@
   color: #fff;
 }
 
-.navBarContent .dropdown-toggle {
+/* Search Form */
+.searchForm {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  padding: 5px 15px;
   margin-left: 20px;
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  width: 180px;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.searchBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.searchBtn:hover {
+  color: #F5C518;
+}
+
+.navBarContent {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navBarContent .dropdown-toggle {
+  margin-left: 15px;
   color: white !important;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 300;
   text-transform: uppercase;
+}
+
+.navLink {
+  color: white !important;
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: #F5C518 !important;
 }
 
 .navBarDropdown a span {
@@ -33,22 +93,111 @@
   color: #000;
   font-weight: 300;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
+
 .dropdownItem {
   color: #000;
-  font-weight: 200;
+  font-weight: 300;
   text-transform: uppercase;
+  font-size: 0.85rem;
 }
+
 .dropdownItem:hover {
   background-color: rgb(33, 102, 75);
   transition: 0.2s;
   color: #fff;
-  font-weight: 200;
 }
 
-@media screen and (max-width: 800px) {
+/* NavBar Actions */
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.navBarActions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+}
+
+.loginIcon {
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: color 0.2s ease;
+}
+
+.loginIcon:hover {
+  color: #F5C518;
+}
+
+.wishlistIcon {
+  position: relative;
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: color 0.2s ease;
+}
+
+.wishlistIcon:hover {
+  color: #e74c3c;
+}
+
+.wishlistBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 992px) {
+  .searchForm {
+    display: none;
+  }
+
   .navBarContent .dropdown-toggle {
-    margin-left: 0px;
+    margin-left: 10px;
+    font-size: 0.8rem;
+  }
+
+  .navLink {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navBar {
+    height: 80px;
+  }
+
+  .navBarLogo {
+    height: 80px;
   }
 }

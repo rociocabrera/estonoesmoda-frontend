@@ -1,25 +1,238 @@
 .footer {
   background-color: rgb(33, 102, 75);
   color: #fff;
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.5;
-  margin-top: 20px;
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
+  margin-top: 60px;
 }
+
+.footerMain {
+  padding: 60px 40px;
+}
+
 .footerContainer {
-  margin: 10px;
-  bottom: 0;
-  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
 }
-.text-muted {
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLogo {
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
   color: #fff;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.5;
+}
+
+.footerTagline {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+}
+
+.socialLinks a {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.socialLinks a:hover {
+  background-color: #E8732D;
+  border-color: #E8732D;
+  color: #fff;
+}
+
+.footerTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Services List */
+.footerServices {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerServices li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+}
+
+.footerServices svg {
+  color: #F5C518;
+  font-size: 0.9rem;
+}
+
+/* Steps List */
+.footerSteps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step;
+}
+
+.footerSteps li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.footerSteps li::before {
+  counter-increment: step;
+  content: counter(step) ".";
+  position: absolute;
+  left: 0;
+  color: #F5C518;
+  font-weight: 600;
+}
+
+/* Footer Links */
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 10px;
+}
+
+.footerLinks a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footerLinks a:hover {
+  color: #F5C518;
+}
+
+/* Contact List */
+.footerContact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerContact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+}
+
+.footerContact svg {
+  color: #F5C518;
+  font-size: 1rem;
+  margin-top: 2px;
+}
+
+/* Footer Bottom */
+.footerBottom {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px 40px;
+}
+
+.footerBottom .footerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footerBottom span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.paymentMethods {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .footerContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footerMain {
+    padding: 40px 20px;
+  }
+
+  .footerContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .footerBottom .footerContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+
+  .footerContact li {
+    justify-content: center;
+  }
+
+  .footerServices li {
+    justify-content: center;
+  }
+
+  .footerSteps li {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .footerSteps li::before {
+    position: relative;
+    margin-right: 5px;
+  }
 }
