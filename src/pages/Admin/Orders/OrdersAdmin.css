@@ -1,0 +1,394 @@
+.ordersAdmin {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.adminLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.pageHeader h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-dark, #1a1a1a);
+  margin: 0;
+}
+
+.pageHeader p {
+  color: #666;
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+}
+
+/* Filters */
+.filtersBar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.searchBox svg {
+  color: #999;
+}
+
+.searchBox input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+}
+
+.statusFilter {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  min-width: 180px;
+  background: white;
+}
+
+/* Orders Table */
+.ordersTable {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ordersTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ordersTable th,
+.ordersTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.ordersTable th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #666;
+  background-color: #f9fafb;
+}
+
+.ordersTable td {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.orderId {
+  font-family: monospace;
+  color: var(--color-primary, #21664b);
+  font-weight: 500;
+}
+
+.customerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.customerInfo span {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.statusSelect {
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.statusSelect.statusPending {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.statusSelect.statusCompleted {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.statusSelect.statusCancelled {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.viewBtn,
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.viewBtn {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.viewBtn:hover {
+  background-color: #bae6fd;
+}
+
+.deleteBtn {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.deleteBtn:hover {
+  background-color: #fecaca;
+}
+
+.noResults {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 12px;
+  color: #666;
+}
+
+/* Order Modal */
+.orderModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.orderModalContent {
+  background: white;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.orderModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.orderModalHeader h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.closeModalBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+}
+
+.closeModalBtn:hover {
+  color: #333;
+}
+
+.orderDetails {
+  padding: 1.5rem;
+}
+
+.orderSection {
+  margin-bottom: 1.5rem;
+}
+
+.orderSection h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0 0 0.75rem;
+}
+
+.orderSection p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+}
+
+.orderItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+.orderItem img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.orderItemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.itemTitle {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.itemQty {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.itemPrice {
+  font-weight: 600;
+  color: var(--color-primary, #21664b);
+}
+
+.orderTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 1.125rem;
+}
+
+/* Delete Modal */
+.deleteModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.deleteModalContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.deleteModalContent h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.deleteModalContent p {
+  color: #666;
+  margin: 0 0 1.5rem;
+}
+
+.deleteModalActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cancelBtn,
+.confirmDeleteBtn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+.confirmDeleteBtn {
+  background-color: #dc2626;
+  color: white;
+}
+
+.confirmDeleteBtn:hover {
+  background-color: #b91c1c;
+}
+
+@media (max-width: 768px) {
+  .ordersTable {
+    overflow-x: auto;
+  }
+
+  .filtersBar {
+    flex-direction: column;
+  }
+
+  .searchBox {
+    max-width: none;
+  }
+}

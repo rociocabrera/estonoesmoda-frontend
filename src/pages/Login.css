@@ -1,0 +1,119 @@
+.loginPage {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.loginCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.loginAvatar {
+  font-size: 4rem;
+  color: rgb(33, 102, 75);
+  margin-bottom: 15px;
+}
+
+.loginHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.formGroup input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: rgb(33, 102, 75);
+}
+
+.loginBtn {
+  background-color: rgb(33, 102, 75);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+
+.loginBtn:hover {
+  background-color: #1a4d3a;
+}
+
+.loginFooter {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.forgotPassword {
+  color: rgb(33, 102, 75);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.registerLink {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.registerLink a {
+  color: #E8732D;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.registerLink a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  .loginCard {
+    padding: 30px 20px;
+  }
+}

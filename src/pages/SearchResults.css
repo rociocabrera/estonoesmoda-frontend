@@ -1,0 +1,45 @@
+.searchResultsContainer {
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.searchTitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.searchTitle span {
+  color: rgb(33, 102, 75);
+  font-weight: 500;
+}
+
+.searchCount {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.noResults {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.noResults p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .searchResultsContainer {
+    padding: 20px;
+  }
+
+  .searchTitle {
+    font-size: 1.2rem;
+  }
+}

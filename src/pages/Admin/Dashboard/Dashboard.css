@@ -1,0 +1,271 @@
+.dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboardHeader {
+  margin-bottom: 2rem;
+}
+
+.dashboardHeader h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-dark, #1a1a1a);
+  margin: 0 0 0.5rem;
+}
+
+.dashboardHeader p {
+  color: #666;
+  margin: 0;
+}
+
+.dashboardLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-size: 1.125rem;
+  color: #666;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.statIcon.products {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.statIcon.orders {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.statIcon.categories {
+  background-color: #f3e8ff;
+  color: #9333ea;
+}
+
+.statIcon.revenue {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.statIcon.pending {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.statIcon.completed {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.statIcon.cancelled {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statValue {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-dark, #1a1a1a);
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.statLink {
+  color: var(--color-primary, #21664b);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+.statLink:hover {
+  text-decoration: underline;
+}
+
+/* Dashboard Sections */
+.dashboardSections {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .dashboardSections {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recentOrdersSection,
+.quickActionsSection {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.sectionHeader h2,
+.quickActionsSection h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-dark, #1a1a1a);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.viewAllLink {
+  color: var(--color-primary, #21664b);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.viewAllLink:hover {
+  text-decoration: underline;
+}
+
+.noData {
+  color: #666;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Orders Table */
+.ordersTable {
+  overflow-x: auto;
+}
+
+.ordersTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ordersTable th,
+.ordersTable td {
+  padding: 0.875rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.ordersTable th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.ordersTable td {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.orderId {
+  font-family: monospace;
+  color: var(--color-primary, #21664b);
+  font-weight: 500;
+}
+
+.orderStatus {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.statusPending {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.statusCompleted {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.statusCancelled {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+/* Quick Actions */
+.quickActionsSection h2 {
+  margin-bottom: 1rem;
+}
+
+.quickActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quickAction {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--color-dark, #1a1a1a);
+  transition: background-color 0.2s;
+}
+
+.quickAction:hover {
+  background-color: #f3f4f6;
+}
+
+.quickAction svg {
+  font-size: 1.25rem;
+  color: var(--color-primary, #21664b);
+}

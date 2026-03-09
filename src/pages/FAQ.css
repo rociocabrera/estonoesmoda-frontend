@@ -1,0 +1,165 @@
+.faqContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+.faqTitle {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgb(33, 102, 75);
+  text-align: center;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.faqSubtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faqItem {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.faqItem:hover {
+  box-shadow: 0 5px 20px rgba(33, 102, 75, 0.1);
+}
+
+.faqItem.open {
+  box-shadow: 0 5px 20px rgba(33, 102, 75, 0.15);
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.faqQuestion:hover {
+  color: rgb(33, 102, 75);
+}
+
+.faqItem.open .faqQuestion {
+  color: rgb(33, 102, 75);
+  border-bottom: 1px solid #eee;
+}
+
+.faqQuestion svg {
+  flex-shrink: 0;
+  margin-left: 15px;
+  font-size: 1.2rem;
+  color: rgb(33, 102, 75);
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faqAnswer.show {
+  max-height: 500px;
+  padding: 0 25px 20px;
+}
+
+.faqAnswer p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+  padding-top: 15px;
+  white-space: pre-line;
+}
+
+/* Contact Section */
+.faqContact {
+  margin-top: 60px;
+  text-align: center;
+  padding: 40px 30px;
+  background: rgba(33, 102, 75, 0.05);
+  border-radius: 20px;
+}
+
+.faqContact h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.faqContact p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.faqWhatsappBtn {
+  display: inline-block;
+  padding: 14px 35px;
+  background-color: #25D366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.faqWhatsappBtn:hover {
+  background-color: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+}
+
+@media screen and (max-width: 600px) {
+  .faqTitle {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .faqSubtitle {
+    font-size: 1rem;
+    margin-bottom: 35px;
+  }
+
+  .faqQuestion {
+    padding: 18px 20px;
+    font-size: 1rem;
+  }
+
+  .faqAnswer.show {
+    padding: 0 20px 18px;
+  }
+
+  .faqContact {
+    padding: 30px 20px;
+  }
+
+  .faqContact h3 {
+    font-size: 1.3rem;
+  }
+}

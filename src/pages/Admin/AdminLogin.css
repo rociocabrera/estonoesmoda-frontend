@@ -1,0 +1,95 @@
+.adminLoginContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-dark, #1a1a1a) 0%, #2d2d2d 100%);
+  padding: 1rem;
+}
+
+.adminLoginCard {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.adminLoginCard h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-dark, #1a1a1a);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.loginSubtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.formGroup input {
+  padding: 0.875rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: var(--color-primary, #21664b);
+  box-shadow: 0 0 0 3px rgba(33, 102, 75, 0.1);
+}
+
+.loginError {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 0.875rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.loginButton {
+  background-color: var(--color-primary, #21664b);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.loginButton:hover:not(:disabled) {
+  background-color: #1a5240;
+}
+
+.loginButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

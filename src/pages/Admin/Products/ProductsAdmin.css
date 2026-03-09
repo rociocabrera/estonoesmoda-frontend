@@ -1,0 +1,271 @@
+.productsAdmin {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.adminLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pageHeader h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-dark, #1a1a1a);
+  margin: 0;
+}
+
+.pageHeader p {
+  color: #666;
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+}
+
+.addButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-primary, #21664b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: #1a5240;
+  color: white;
+}
+
+/* Filters */
+.filtersBar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.searchBox svg {
+  color: #999;
+}
+
+.searchBox input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+}
+
+.categoryFilter {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  min-width: 180px;
+  background: white;
+}
+
+/* Products Table */
+.productsTable {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.productsTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.productsTable th,
+.productsTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.productsTable th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #666;
+  background-color: #f9fafb;
+}
+
+.productsTable td {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.productThumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.productName {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.productSlug {
+  font-size: 0.75rem;
+  color: #999;
+  font-family: monospace;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editBtn,
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.editBtn {
+  background-color: #e0f2fe;
+  color: #0284c7;
+  text-decoration: none;
+}
+
+.editBtn:hover {
+  background-color: #bae6fd;
+}
+
+.deleteBtn {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.deleteBtn:hover {
+  background-color: #fecaca;
+}
+
+.noResults {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 12px;
+  color: #666;
+}
+
+/* Delete Modal */
+.deleteModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.deleteModalContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.deleteModalContent h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.deleteModalContent p {
+  color: #666;
+  margin: 0 0 1.5rem;
+}
+
+.deleteModalActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cancelBtn,
+.confirmDeleteBtn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+.confirmDeleteBtn {
+  background-color: #dc2626;
+  color: white;
+}
+
+.confirmDeleteBtn:hover {
+  background-color: #b91c1c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .productsTable {
+    overflow-x: auto;
+  }
+
+  .filtersBar {
+    flex-direction: column;
+  }
+
+  .searchBox {
+    max-width: none;
+  }
+}
