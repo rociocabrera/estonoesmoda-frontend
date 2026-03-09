@@ -1,22 +1,44 @@
 .render {
-  position: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  padding: 20px 60px 60px;
+  max-width: 1800px;
+  margin: 0 auto;
 }
-.welcome {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
+
+.categoryTitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  text-transform: none;
+  letter-spacing: 1px;
+  text-align: left;
 }
-.greeting {
-  margin-top: 100px;
-  text-align: center;
-  font-weight: lighter;
-  font-size: 2rem;
-  color: black;
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  margin-bottom: 30px;
   text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  border: none;
+}
+
+@media screen and (max-width: 768px) {
+  .render {
+    padding: 20px 15px 40px;
+  }
+
+  .categoryTitle {
+    font-size: 1.4rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
 }
