@@ -6,7 +6,7 @@ export const AddItemButton = (props) => {
   return (
     <div className="addToCart">
       <button className="addToCartButton" onClick={onClickAddToCart}>
-        Add to cart
+        Agregar al carrito
       </button>
     </div>
   );

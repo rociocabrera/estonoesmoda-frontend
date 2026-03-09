@@ -15,6 +15,11 @@ function ItemDetailContainer() {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
+    // Scroll al tope al entrar a la página
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (productSlug) {
       setLoading(true);
       getProductBySlug(productSlug).then((productResult) => {
@@ -27,9 +32,6 @@ function ItemDetailContainer() {
   return (
     <Layout>
       <div className="render">
-        <div className="welcome">
-          <h1 className="greeting">Product Details</h1>
-        </div>
         <ItemDetail product={product} loading={loading} addToCart={addToCart} />
       </div>
     </Layout>
