@@ -1,0 +1,172 @@
+.featuredSection {
+  padding: 50px 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(33, 102, 75, 0.03) 0%, rgba(33, 102, 75, 0.08) 100%);
+}
+
+.featuredTitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
+.featuredLoading {
+  text-align: center;
+  padding: 60px;
+  color: #666;
+}
+
+.carouselContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 30px;
+  animation: scroll 25s linear infinite;
+  width: fit-content;
+}
+
+.carouselTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carouselItem {
+  flex-shrink: 0;
+  width: 280px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carouselItem:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.carouselImgWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.carouselImg {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.carouselItem:hover .carouselImg {
+  transform: scale(1.08);
+}
+
+.carouselOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carouselItem:hover .carouselOverlay {
+  opacity: 1;
+}
+
+.viewProductBtn {
+  padding: 12px 25px;
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  transform: translateY(20px);
+}
+
+.carouselItem:hover .viewProductBtn {
+  transform: translateY(0);
+}
+
+.viewProductBtn:hover {
+  background: rgb(33, 102, 75);
+  color: #fff;
+}
+
+.carouselInfo {
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.carouselProductName {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.carouselProductPrice {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+@media screen and (max-width: 768px) {
+  .featuredSection {
+    padding: 40px 0;
+  }
+
+  .featuredTitle {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+
+  .carouselTrack {
+    gap: 20px;
+  }
+
+  .carouselItem {
+    width: 220px;
+  }
+
+  .carouselOverlay {
+    display: none;
+  }
+
+  .carouselItem:hover .carouselImg {
+    transform: none;
+  }
+
+  .carouselInfo {
+    padding: 15px 10px;
+  }
+
+  .carouselProductName {
+    font-size: 0.85rem;
+  }
+}
