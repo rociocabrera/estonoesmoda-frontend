@@ -1,5 +1,5 @@
 import { db } from "../db/db";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where, addDoc, updateDoc, deleteDoc, doc } from "firebase/firestore";
 
 export const getCategories = async () => {
   try {
@@ -24,4 +24,34 @@ export const getCategoryBySlug = async (slug) => {
   }
 };
 
-export default { getCategories, getCategoryBySlug };
+export const addCategory = async (categoryData) => {
+  try {
+    const categoriesRef = collection(db, "categories");
+    const docRef = await addDoc(categoriesRef, categoryData);
+    return docRef.id;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateCategory = async (categoryId, categoryData) => {
+  try {
+    const categoryRef = doc(db, "categories", categoryId);
+    await updateDoc(categoryRef, categoryData);
+    return categoryId;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteCategory = async (categoryId) => {
+  try {
+    const categoryRef = doc(db, "categories", categoryId);
+    await deleteDoc(categoryRef);
+    return categoryId;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export default { getCategories, getCategoryBySlug, addCategory, updateCategory, deleteCategory };
