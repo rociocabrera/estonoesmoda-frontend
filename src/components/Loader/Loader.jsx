@@ -1,9 +1,14 @@
-import { Waveform } from "@uiball/loaders";
+import "./Loader.css";
 
 const Loader = () => {
   return (
-    <div>
-      <Waveform size={40} lineWeight={3.5} speed={1} color="pink" />
+    <div className="loaderContainer">
+      <img
+        src="/images/logo.png"
+        alt="Cargando..."
+        className="loaderLogo"
+      />
+      <p className="loaderText">Cargando...</p>
     </div>
   );
 };

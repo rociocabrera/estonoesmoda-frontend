@@ -1,12 +1,15 @@
 import { Footer } from "../Footer";
 import { NavBar } from "../NavBar";
+import { WhatsAppButton } from "../WhatsAppButton";
+import "./Layout.css";
 
 const Layout = ({ children }) => {
   return (
     <>
       <NavBar />
-      <div>{children}</div>
+      <main className="main-content">{children}</main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 };
